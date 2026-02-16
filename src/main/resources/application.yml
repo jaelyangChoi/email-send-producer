@@ -7,3 +7,5 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       # 메시지의 value 직렬화 방식 : String을 byte[]로 바꿔 전송하는 역할
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner # 라운드로빈 파티셔너 사용 (동일한 key를 가진 메시지들이 여러 파티션에 분산되어 저장되도록 함)
