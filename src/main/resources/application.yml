@@ -1,7 +1,10 @@
 spring:
   kafka:
     # Kafka 서버 주소 (EC2에 카프카를 설치했기 때문에 EC2 주소를 입력해야 한다.)
-    bootstrap-servers: 52.79.47.232:9092
+    bootstrap-servers:
+     - 52.79.47.232:9092
+     - 52.79.47.232:19092
+     - 52.79.47.232:29092
     producer:
       # 메시지의 key 직렬화 방식 : String을 byte[]로 바꿔 전송하는 역할 (Kafka는 byte[] 형태로 데이터를 전송하기 때문에 직렬화 과정이 필요하다.)
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
